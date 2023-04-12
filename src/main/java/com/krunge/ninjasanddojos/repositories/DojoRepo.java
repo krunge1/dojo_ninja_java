@@ -8,5 +8,5 @@ import com.krunge.ninjasanddojos.models.Dojo;
 
 public interface DojoRepo extends CrudRepository<Dojo, Long> {
 	List<Dojo> findAll();
-
+	
 }

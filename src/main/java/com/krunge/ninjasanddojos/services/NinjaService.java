@@ -29,15 +29,9 @@ public class NinjaService {
 		return nRepo.findById(id).orElse(null);
 	}
 	
-	// Get Ninja by Dojo ID
-	public Ninja getByDojoId(Long id) {
-		optional<Ninja> result = nRepo.findAllByDojo(id);
-		if(result.isPresent()) {
-			return result.get();
-		}
-		else {
-			return null;
-		}
+	// Get Ninjas by Dojo Id
+	public List<Ninja> getByDojoId(Long dojoId) {
+		return nRepo.findAllByDojo(dojoId);
 	}
 	
 	// Delete Ninja

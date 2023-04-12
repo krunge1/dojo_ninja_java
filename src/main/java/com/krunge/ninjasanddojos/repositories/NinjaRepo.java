@@ -9,5 +9,6 @@ import com.krunge.ninjasanddojos.models.Ninja;
 public interface NinjaRepo extends CrudRepository<Ninja, Long> {
 
 	List<Ninja> findAll();
-	List<Ninja> findAllByDojo(Ninja Long);
+	
+	List<Ninja> findAllByDojo(Long dojoId);
 }

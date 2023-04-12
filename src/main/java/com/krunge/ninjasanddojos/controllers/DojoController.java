@@ -41,12 +41,15 @@ public class DojoController {
 	
 	@GetMapping("/{id}")
 	public String rViewDojo(
-			@PathVariable("id") Long id,
-			@ModelAttribute("dojo") Dojo dojo,
-			@ModelAttribute("ninja")Ninja ninja
+			@PathVariable("id") Long dojoId,
+			Model model
 			) {
-		List<Ninja> ninjas = nService.getByDojoId();
 		
+		Dojo dojo = dService.getById(dojoId);
+		
+		model.addAttribute("dojo", dojo);
+		
+		return "viewDojo.jsp";
 	}
 	
 	
