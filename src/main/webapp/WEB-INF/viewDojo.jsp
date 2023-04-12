@@ -18,14 +18,27 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     </head>
 <body>
-	<div>
-    <h1>${dojo.name}</h1>
+	<div class="header header_line_group">
+    <h1>${dojo.name} Location Ninjas</h1>
 	<a href="/dojos">Return to Dojos</a>
 	</div>
-    	<div class="mb-3 row">
-    		<c:forEach var="ninjas" items="${dojo.ninjas}">	
-			<p>${ninjas.firstName}</p>
+	<table class="table table-dark table-striped-columns box_sizing">
+	  <thead class="thead-dark">
+	    <tr>
+	    	<th>First Name</th>
+	      	<th>Last Name</th>
+ 		    <th>Age</th>   
+	   </tr>
+	  </thead>
+	  <tbody>
+    		<c:forEach var="ninjas" items="${dojo.ninjas}">
+    		<tr>
+			<td>${ninjas.firstName}</td>
+			<td>${ninjas.lastName}</td>
+			<td>${ninjas.age}</td>
     		</c:forEach>		
-    	</div>
+    		</tr>	
+	  </tbody>
+	</table> 	
 </body>
 </html>

@@ -15,17 +15,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.krunge.ninjasanddojos.models.Dojo;
-import com.krunge.ninjasanddojos.models.Ninja;
 import com.krunge.ninjasanddojos.services.DojoService;
-import com.krunge.ninjasanddojos.services.NinjaService;
 
 @Controller
 @RequestMapping("/dojos")
 public class DojoController {
 	@Autowired
 	private DojoService dService;
-	@Autowired
-	private NinjaService nService;
 	
 	@GetMapping("")
 	public String rDojoShow(

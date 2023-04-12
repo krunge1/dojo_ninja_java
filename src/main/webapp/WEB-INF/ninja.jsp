@@ -18,29 +18,39 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     </head>
 <body>
-	<div>
+	<div class="header_line_group">
     <h1>New Ninja</h1>
 	<a href="/dojos">Return to Dojos</a>
 	</div>
+	<div class="form_box container">
     <form:form action="/ninja" method="post" modelAttribute="ninja">
-    	<div class="mb-3 row">
-    		Dojo:<form:select path="dojo" class="form-label col">
+    		<div class="mb-3 row">
+			<form:label path="firstName" class="form-label col">Dojo:</form:label>
+    		<form:select path="dojo" class="form-label col">
     		<c:forEach var="dojo" items="${dojos}">	
 			<form:option path="dojo" class="col" value="${dojo.id}">${dojo.name}</form:option>
     		</c:forEach>
     		</form:select>
+    		</div>
+    		<div class="mb-3 row">    		
     		<form:label path="firstName" class="form-label col">First Name:</form:label>
     		<form:errors path="firstName" class="text-danger"/>
     		<form:input path="firstName" class="col"/>
+    		</div>
+    		<div class="mb-3 row">
     		<form:label path="lastName" class="form-label col">Last Name:</form:label>
     		<form:errors path="lastName" class="text-danger"/>
-    		<form:input path="lastName" class="col"/>    		
+    		<form:input path="lastName" class="col"/>   
+    		</div> 		
+    		<div class="mb-3 row">
     		<form:label path="age" class="form-label col">Age:</form:label>
     		<form:errors path="age" class="text-danger"/>
     		<form:input path="age" class="col" type="number"/>
+    		</div>
+    		<div class="mb-3 row">
  		 	<button type="submit" class="btn btn-primary" value="submit_form">Submit</button>
-    	</div>
+ 		 	</div>
     </form:form>
-        
+    </div>    
 </body>
 </html>
